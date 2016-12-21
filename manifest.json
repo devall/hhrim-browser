@@ -12,6 +12,7 @@
 		"default_icon": "images/icon.png", // Иконка для кнопки
 		"default_popup": "popup.html" // Всплывающее окно
 	},
+	"content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com https://ajax.googleapis.com; object-src 'self'",
 
 	"options_page": "options.html" // Страница настроек
 }

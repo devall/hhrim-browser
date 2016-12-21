@@ -4,6 +4,11 @@ $(document).ready(function () {
 	  currentWindow: true
 	}, urlLoaded);
 
+ //    chrome.browserAction.onClicked.addListener(function(tab){
+ //    	alert('icon clicked');
+	// });
+
+
 	function urlLoaded(tabs){
 		var tab = tabs[0];
 		var url = tab.url;
@@ -29,9 +34,24 @@ $(document).ready(function () {
 		var location = $('.location', data).children('div.geo').text();
 		var location_status = $('.location', data).children('div.ready_to').text();
 		var age = $('.experience_and_age', data).children('div.row:first').children('div.value').text();
-		var experience = $('.experience_and_age', data).children('div.row:nth-child(2)').children('div.value').text();
+		var experience = $('.experience_and_age', data).children('div.row:nth-child(3)').children('div.value').text();
 
-		$('#wrapper').html(about_info);
+		$('#username').val(username);
+		$('#profession').val(profession);
+		$('#homepage').val(homepage);
+		$('#status').val(status);
+		$('#salary').val(salary);
+		$('#about_info').val(about_info);
+		$('#skills_info').val(skills_info);
+		$('#friends_count').val(friends_count);
+		$('#letters_count').val(letters_count);
+		$('#registered_at').val(registered_at);
+		$('#last_visit').val(last_visit);
+		$('#location').val(location);
+		$('#location_status').val(location_status);
+		$('#age').val(age);
+		$('#experience').val(experience);
+
 		var myData = {
 			username: username,
 			profession: profession,
@@ -51,6 +71,52 @@ $(document).ready(function () {
 			work_experience: [],
 			education_show: []
 		};
+
+		$('#username').change(function(){
+			myData.username = $(this).val();
+		});
+		$('#profession').change(function(){
+			myData.profession = $(this).val();
+		});
+		$('#homepage').change(function(){
+			myData.homepage = $(this).val();
+		});
+		$('#status').change(function(){
+			myData.status = $(this).val();
+		});
+		$('#salary').change(function(){
+			myData.salary = $(this).val();
+		});
+		$('#about_info').change(function(){
+			myData.about_info = $(this).val();
+		});
+		$('#skills_info').change(function(){
+			myData.skills_info = $(this).val();
+		});
+		$('#friends_count').change(function(){
+			myData.friends_count = $(this).val();
+		});
+		$('#letters_count').change(function(){
+			myData.letters_count = $(this).val();
+		});
+		$('#registered_at').change(function(){
+			myData.registered_at = $(this).val();
+		});
+		$('#last_visit').change(function(){
+			myData.last_visit = $(this).val();
+		});
+		$('#location').change(function(){
+			myData.location = $(this).val();
+		});
+		$('#location_status').change(function(){
+			myData.location_status = $(this).val();
+		});
+		$('#age').change(function(){
+			myData.age = $(this).val();
+		});
+		$('#experience').change(function(){
+			myData.experience = $(this).val();
+		});
 
 		$('.work_experiences', data).children('.work_experience').each(function(){
 			var period = $(this).children('.period').text();
