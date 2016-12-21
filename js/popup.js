@@ -50,6 +50,7 @@ $(document).ready(function () {
 		$('#age').val(age);
 		$('#experience').val(experience);
 
+
 		var myData = {
 			username: username,
 			profession: profession,
@@ -116,11 +117,20 @@ $(document).ready(function () {
 
 		$('.user_skills_list', data).children('.skills').children('.skill').each(function(){
 			var skill = $(this).text();
-			myData.skills.push({
-				skill: skill
-			});
+			myData.skills.push(skill);
+			$('#skills').tagsinput('add', skill)
 		});
 
+		$('#skills').on('itemAdded', function(event) {
+		  console.log(event.item);
+		  myData.skills.push(event.item);
+		});
+		$('#skills').on('itemRemoved', function(event) {
+			console.log(event.item);
+			if(myData.skills.indexOf(event.item) > -1){
+				myData.skills.splice(myData.skills.indexOf(event.item), 1);
+			}
+		});
 
 		$('.work_experiences', data).children('.work_experience').each(function(){
 			var period = $(this).children('.period').text();
@@ -133,6 +143,7 @@ $(document).ready(function () {
 				location: location,
 				period: period
 			});
+			$('#jobs').append("<small><b>"+ company_name +"</b> - "+ position +"</small><br>");
 		});
 
 		$('.educations_show', data).children('.education_show').each(function(){
@@ -146,6 +157,8 @@ $(document).ready(function () {
 				location: location,
 				period: period
 			});
+			$('#edu').append("<small><b>"+ institution_name +"</b> - "+ specialization +"</small><br>");
+
 		});
 
 

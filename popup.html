@@ -1,5 +1,7 @@
 ﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+<link rel="stylesheet" href="css/bootstrap-tagsinput.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
@@ -83,10 +85,17 @@
 	  <label for="pwd">Возраст:</label>
 	  <input type="text" class="form-control" id="age">
 	</div>
+	<div class="page-header" id="jobs">
+	  <label for="pwd">Профессии:</label><br>
+	</div>
+	<div class="page-header" id="edu">
+	  <label for="pwd">Образование:</label><br>
+	</div>
 	<div class="form-group">
 	  <label for="pwd">Опыт:</label>
-	  <input type="text" class="form-control" id="experience">
+	  <input type="text" class="form-control" id="skills" data-role="tagsinput">
 	</div>
+
 
 	<button type="button" class="btn btn-info btn-lg">Какое-то действие</button>
 </div>
