@@ -21,7 +21,6 @@ $(document).ready(function () {
 
 	function htmlLoaded(data){
 		var about_info = $('.about_user_text', data).text();
-		var skills_info = $('.user_skills_list', data).children('.skills').text();
 		var username = $('.user_name', data).text();
 		var profession = $('.profession', data).text();
 		var status = $('.salary', data).children('.status').text();
@@ -42,7 +41,6 @@ $(document).ready(function () {
 		$('#status').val(status);
 		$('#salary').val(salary);
 		$('#about_info').val(about_info);
-		$('#skills_info').val(skills_info);
 		$('#friends_count').val(friends_count);
 		$('#letters_count').val(letters_count);
 		$('#registered_at').val(registered_at);
@@ -59,7 +57,6 @@ $(document).ready(function () {
 			status: status,
 			salary: salary,
 			about_info: about_info,
-			skills_info: skills_info,
 			friends_count: friends_count,
 			letters_count: letters_count,
 			registered_at: registered_at,
@@ -69,7 +66,8 @@ $(document).ready(function () {
 			age: age,
 			experience: experience,
 			work_experience: [],
-			education_show: []
+			education_show: [],
+			skills: []
 		};
 
 		$('#username').change(function(){
@@ -89,9 +87,6 @@ $(document).ready(function () {
 		});
 		$('#about_info').change(function(){
 			myData.about_info = $(this).val();
-		});
-		$('#skills_info').change(function(){
-			myData.skills_info = $(this).val();
 		});
 		$('#friends_count').change(function(){
 			myData.friends_count = $(this).val();
@@ -117,6 +112,15 @@ $(document).ready(function () {
 		$('#experience').change(function(){
 			myData.experience = $(this).val();
 		});
+
+
+		$('.user_skills_list', data).children('.skills').children('.skill').each(function(){
+			var skill = $(this).text();
+			myData.skills.push({
+				skill: skill
+			});
+		});
+
 
 		$('.work_experiences', data).children('.work_experience').each(function(){
 			var period = $(this).children('.period').text();
