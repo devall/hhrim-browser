@@ -1,0 +1,17 @@
+{
+	"manifest_version": 2,
+
+	"name": "Resume-Parse", // Название расширения
+	"version": "1.0", // Номер версии
+	"description": "Bla-bla-bla", // Описание расширения
+
+	"permissions": ["<all_urls>"],
+
+	"browser_action": {
+		"default_title": "Resume-Parse", // Название кнопки
+		"default_icon": "images/icon.png", // Иконка для кнопки
+		"default_popup": "popup.html" // Всплывающее окно
+	},
+
+	"options_page": "options.html" // Страница настроек
+}
