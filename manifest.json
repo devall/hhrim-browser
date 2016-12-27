@@ -1,18 +1,26 @@
-{
+п»ї{
 	"manifest_version": 2,
 
-	"name": "Resume-Parse", // Название расширения
-	"version": "1.0", // Номер версии
-	"description": "Bla-bla-bla", // Описание расширения
+	"name": "Resume-Parse", // ГЌГ Г§ГўГ Г­ГЁГҐ Г°Г Г±ГёГЁГ°ГҐГ­ГЁГї
+	"version": "1.0", // ГЌГ®Г¬ГҐГ° ГўГҐГ°Г±ГЁГЁ
+	"description": "Bla-bla-bla", // ГЋГЇГЁГ±Г Г­ГЁГҐ Г°Г Г±ГёГЁГ°ГҐГ­ГЁГї
 
-	"permissions": ["<all_urls>"],
+	"permissions": ["<all_urls>", "tabs"],
 
 	"browser_action": {
-		"default_title": "Resume-Parse", // Название кнопки
-		"default_icon": "images/icon.png", // Иконка для кнопки
-		"default_popup": "popup.html" // Всплывающее окно
+		"default_title": "Resume-Parse", // ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ­Г®ГЇГЄГЁ
+		"default_icon": "images/icon.png", // Г€ГЄГ®Г­ГЄГ  Г¤Г«Гї ГЄГ­Г®ГЇГЄГЁ
+		"default_popup": "popup.html" // Г‚Г±ГЇГ«Г»ГўГ ГѕГ№ГҐГҐ Г®ГЄГ­Г®
 	},
+	"web_accessible_resources": [
+	    "views/*"
+	 ],
+	"content_scripts": [
+		{
+		  "matches": ["<all_urls>"],
+		  "js": ["js/jquery.min.js", "js/popup.js", "js/bootstrap-tagsinput.js", "js/bootstrap.min.js"]
+		}
+	],
 	"content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com https://ajax.googleapis.com; object-src 'self'",
-
-	"options_page": "options.html" // Страница настроек
+	"options_page": "options.html" // Г‘ГІГ°Г Г­ГЁГ¶Г  Г­Г Г±ГІГ°Г®ГҐГЄ
 }

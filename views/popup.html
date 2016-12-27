@@ -1,0 +1,117 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+<link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul li {
+		list-style-type: none;
+	}
+
+	a, a:visited {
+		color: #FF6633;
+	}
+
+	a:active {
+		color: #CC3300;
+	}
+
+	#wrapper {
+		font: 16px Trebuchet MS, Arial;
+		text-align: left;
+	}
+
+	#wrapper ul li {
+		margin-bottom: 10px;
+	}
+</style>
+
+<!-- Modal -->
+<div id="rp-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width:450px !important">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width:450px !important; margin:0 auto;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Сбор информации</h4>
+      </div>
+      <div class="modal-body">
+        <div id="wrapper">
+			<div class="form-group">
+			  <label for="usr">Имя:</label>
+			  <input type="text" class="form-control" id="username">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Профессия:</label>
+			  <input type="text" class="form-control" id="profession">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Домашняя страница:</label>
+			  <input type="text" class="form-control" id="homepage">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Статус:</label>
+			  <input type="text" class="form-control" id="status">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Зарплата:</label>
+			  <input type="text" class="form-control" id="salary">
+			</div>
+			<div class="form-group">
+			  <label for="comment">О себе:</label>
+			  <textarea class="form-control" rows="5" id="about_info"></textarea>
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Кол-во друзей:</label>
+			  <input type="text" class="form-control" id="friends_count">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Рекоммендательные письма:</label>
+			  <input type="text" class="form-control" id="letters_count">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Зарегистрирован:</label>
+			  <input type="text" class="form-control" id="registered_at">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Последний визит:</label>
+			  <input type="text" class="form-control" id="last_visit">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Местоположение:</label>
+			  <input type="text" class="form-control" id="location">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Статус местоположения:</label>
+			  <input type="text" class="form-control" id="location_status">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Возраст:</label>
+			  <input type="text" class="form-control" id="age">
+			</div>
+			<div class="page-header" id="jobs">
+			  <label for="pwd">Профессии:</label><br>
+			</div>
+			<div class="page-header" id="edu">
+			  <label for="pwd">Образование:</label><br>
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Опыт:</label>
+			  <input type="text" class="form-control" id="skills" data-role="tagsinput">
+			</div>
+
+
+			<button type="button" class="btn btn-info btn-lg">Какое-то действие</button>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
